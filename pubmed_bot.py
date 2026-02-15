@@ -1,6 +1,7 @@
 from Bio import Entrez
 import requests
 import re
+import os
 from datetime import datetime, timedelta
 
 # CONFIG
