@@ -1,13 +1,15 @@
+import os
 from Bio import Entrez
 import requests
 import re
-import os
 from datetime import datetime, timedelta
 
-# CONFIG
+# ---------------- CONFIG ----------------
 Entrez.email = "santoro.claudio95@gmail.com"
-TELEGRAM_TOKEN = "{{TELEGRAM_TOKEN}}"
-CHAT_ID = "{{CHAT_ID}}"
+
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")  # Legge il secret da GitHub
+CHAT_ID = os.environ.get("CHAT_ID")                # Legge il secret da GitHub
+
 
 QUERY = """
 (anterior cruciate ligament OR ACL OR ankle)
