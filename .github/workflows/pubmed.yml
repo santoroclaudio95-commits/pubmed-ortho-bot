@@ -1,0 +1,20 @@
+name: PubMed Ortho Bot
+
+on:
+  schedule:
+    - cron: "0 11 * * *"   # 12:00 Switzerland
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install biopython requests
+      - run: python pubmed_bot.py
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
