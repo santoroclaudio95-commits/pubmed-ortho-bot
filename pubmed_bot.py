@@ -4,7 +4,7 @@ import re
 from datetime import datetime, timedelta
 
 # CONFIG
-Entrez.email = "your_email@example.com"
+Entrez.email = "santoro.claudio95@gmail.com"
 TELEGRAM_TOKEN = "{{TELEGRAM_TOKEN}}"
 CHAT_ID = "{{CHAT_ID}}"
 
