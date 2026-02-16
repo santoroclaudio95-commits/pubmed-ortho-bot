@@ -12,9 +12,33 @@ CHAT_ID = os.environ.get("CHAT_ID")                # Legge il secret da GitHub
 
 
 QUERY = """
-(anterior cruciate ligament OR ACL OR ankle)
-AND (orthopedic OR orthopaedic OR surgery OR reconstruction OR rehabilitation)
-AND (randomized OR randomised OR meta-analysis)
+(
+  anterior cruciate ligament OR ACL
+  OR meniscus OR meniscal
+  OR ankle
+  OR foot
+  OR achilles tendon OR achilles
+  OR hip
+)
+AND
+(
+  orthopedic OR orthopaedic
+  OR surgery OR surgical
+  OR reconstruction
+  OR repair
+  OR rehabilitation
+)
+AND
+(
+  randomized OR randomised
+  OR meta-analysis
+  OR systematic review
+)
+AND
+(
+  sport OR sports OR athlete OR athletes
+  OR return to sport
+)
 AND english[Language]
 """
 
