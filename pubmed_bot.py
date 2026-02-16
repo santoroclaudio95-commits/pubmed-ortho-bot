@@ -109,7 +109,7 @@ if ids:
             continue
 
         quality = score_quality(abstract)
-        if quality < 8:
+        if quality < 9:
             continue
 
         pmid = art["MedlineCitation"]["PMID"]
