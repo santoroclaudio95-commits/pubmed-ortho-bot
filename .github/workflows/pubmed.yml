@@ -2,7 +2,7 @@ name: PubMed Bot
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # ogni giorno alle 12:00
+    - cron: '0 10 * * *'  # ogni giorno alle 10:00
   workflow_dispatch:
 
 jobs:
