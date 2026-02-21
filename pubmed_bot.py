@@ -61,6 +61,12 @@ def score_quality(text):
         score += 1
     return score
 
+def extract_ci(text):
+    match = re.search(r"95%?\s*CI[:\s]*[\(\[]?\s*\d+\.?\d*\s*[-–]\s*\d+\.?\d*", text, re.I)
+    if match:
+        return match.group(0)
+    return "CI non riportato"
+
 def summarize(text):
     sentences = re.split(r'(?<=[.!?]) +', text)
     return " ".join(sentences[:2])  # primi 2 periodi come riassunto clinico
@@ -112,6 +118,9 @@ if ids:
         if quality < 8:
             continue
 
+      p_value = extract_p_value(abstract)
+       ci_value = extract_ci(abstract)
+
         pmid = art["MedlineCitation"]["PMID"]
         link = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}"
         summary = summarize(abstract)
@@ -120,6 +129,8 @@ if ids:
         msg = (
             f"{tags} — High-Quality Evidence\n\n"
             f"{title}\n"
+            f"P-value: {p_value}\n"
+            f"CI: {ci_value}\n"
             f"Quality: {quality}/10\n\n"
             f"{summary}\n\n"
             f"{link}"
