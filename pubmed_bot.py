@@ -134,7 +134,7 @@ if ids:
 
         msg = (
             f"{tags} — High-Quality Evidence\n\n"
-            f"{title}\n"
+            f"{title}\n\n"
             f"P-value: {p_value}\n"
             f"CI: {ci_value}\n"
             f"Quality: {quality}/10\n\n"
