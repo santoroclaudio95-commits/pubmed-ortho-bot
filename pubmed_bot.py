@@ -118,8 +118,8 @@ if ids:
         if quality < 8:
             continue
 
-      p_value = extract_p_value(abstract)
-       ci_value = extract_ci(abstract)
+        p_value = extract_p_value(abstract)
+        ci_value = extract_ci(abstract)
 
         pmid = art["MedlineCitation"]["PMID"]
         link = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}"
