@@ -61,6 +61,12 @@ def score_quality(text):
         score += 1
     return score
 
+def extract_p_value(text):
+    match = re.search(r"p\s*[=≤<]\s*0\.\d+", text, re.I)
+    if match:
+        return match.group(0)
+    return "p non riportato"
+
 def extract_ci(text):
     match = re.search(r"95%?\s*CI[:\s]*[\(\[]?\s*\d+\.?\d*\s*[-–]\s*\d+\.?\d*", text, re.I)
     if match:
