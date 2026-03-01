@@ -18,6 +18,10 @@ QUERY = """
   OR foot
   OR achilles tendon OR achilles
   OR hip
+  OR shoulder
+  OR rotator cuff
+  OR labrum
+  OR instability
 )
 AND
 (
@@ -86,6 +90,8 @@ def tag_article(text):
         tags.append("🦶 Foot/Ankle")
     if "hip" in text_lower:
         tags.append("🦴 Hip")
+    if any(k in text_lower for k in ["shoulder", "rotator cuff", "labrum", "instability"]):
+        tags.append("🦾 Shoulder")
     if any(k in text_lower for k in ["sport", "athlete", "return to sport"]):
         tags.append("🏃 Sport")
     return " ".join(tags) if tags else ""
