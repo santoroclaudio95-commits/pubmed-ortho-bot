@@ -153,7 +153,7 @@ if ids:
 if messages:
     text = "\n\n".join(messages)
 else:
-    text = "🦵 Nessun articolo nuovo oggi su ACL, menisco, caviglia, piede, achilles o anca che soddisfi i criteri di qualità."
+    text = "Nessun articolo nuovo oggi che soddisfi i criteri di qualità."
 
 url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
 r = requests.post(url, data={"chat_id": CHAT_ID, "text": text})
